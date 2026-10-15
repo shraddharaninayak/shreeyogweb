@@ -9,44 +9,51 @@
 // ----------------------------------------------------------
 const PROJECTS = [
   {
+    id:   'shri-venkatesh',
     name: 'Shri Venkatesh',
-    img:  'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80',
+    img:  'images/venkatesh-real.png',
     alt:  'Shri Venkatesh — residential exterior',
-    desc: 'A premium residential development crafted with meticulous attention to detail, offering homes designed for refined everyday living.'
+    desc: 'A premium residential development crafted with meticulous attention to detail, offering modern 2 & 3 BHK homes designed for refined everyday living.'
   },
   {
+    id:   'shri-brahmand',
     name: 'Shri Brahmand',
-    img:  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80',
+    img:  'images/bramhand-real.jpg',
     alt:  'Shri Brahmand — residential exterior',
     desc: 'Thoughtfully planned living spaces that balance architectural elegance with the warmth and comfort a home deserves.'
   },
   {
+    id:   'shri-neelkanth',
     name: 'Shri Neelkanth',
-    img:  'https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=900&q=80',
+    img:  'images/neelkanth-real.jpg',
     alt:  'Shri Neelkanth — residential exterior',
     desc: 'A distinguished residential community where contemporary design meets enduring quality, tailored for those with discerning standards.'
   },
   {
+    id:   'shri-nandan',
     name: 'Shri Nandan',
-    img:  'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80',
+    img:  'images/nandan-real.jpg',
     alt:  'Shri Nandan — residential exterior',
     desc: 'Serene, well-considered residences designed to offer a complete living experience with generous spaces and refined finishes.'
   },
   {
+    id:   'shri-malhar',
     name: 'Shri Malhar',
-    img:  'https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?auto=format&fit=crop&w=900&q=80',
+    img:  'images/malhar-real.jpg',
     alt:  'Shri Malhar — residential exterior',
     desc: "Carefully designed homes that reflect Shreeyog's commitment to architectural integrity, quality materials, and timeless aesthetics."
   },
   {
+    id:   'shri-murlidhar-park',
     name: 'Shri Murlidhar Park',
-    img:  'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=900&q=80',
+    img:  'images/murlidhar-real.jpg',
     alt:  'Shri Murlidhar Park — residential exterior',
     desc: 'A residential enclave offering well-proportioned homes within a considered environment, crafted for long-term comfort and value.'
   },
   {
+    id:   'shri-pandurang',
     name: 'Shri Pandurang',
-    img:  'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80',
+    img:  'images/pandurang-real.jpg',
     alt:  'Shri Pandurang — residential exterior',
     desc: 'Premium homes designed with purpose and precision, bringing together quality craftsmanship and spaces that inspire everyday life.'
   }
@@ -222,7 +229,28 @@ function closeMenu() {
 
 if (menuOpenBtn)  menuOpenBtn.addEventListener('click', openMenu);
 if (menuCloseBtn) menuCloseBtn.addEventListener('click', closeMenu);
-menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+menuLinks.forEach(link => {
+  if (!link.classList.contains('menu-overlay__dropdown-toggle')) {
+    link.addEventListener('click', closeMenu);
+  }
+});
+qsa('.menu-overlay__sub-link').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Mobile menu dropdown toggle
+const dropdownToggle = qs('.menu-overlay__dropdown-toggle');
+const subMenu = qs('.menu-overlay__sub-menu');
+if (dropdownToggle && subMenu) {
+  dropdownToggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    subMenu.style.display = expanded ? 'none' : 'flex';
+    const chevron = this.querySelector('.chevron-icon');
+    if (chevron) chevron.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+  });
+}
 
 // Close on Escape key
 document.addEventListener('keydown', e => {
@@ -263,11 +291,13 @@ function buildProjectSlides() {
 
     slide.appendChild(img);
 
-    // Clicking an adjacent slide navigates to it
+    // Clicking an adjacent slide navigates to it; clicking the active slide navigates to the project anchor
     slide.addEventListener('click', () => {
       if (i !== currentProject) {
         currentProject = i;
         updateCarousel(true);
+      } else {
+        window.location.href = 'projects/ongoing/#' + project.id;
       }
     });
 
@@ -348,6 +378,13 @@ function updateCarousel(isNavigation) {
         projectDescTextEl.classList.remove('fading');
       }, 350);
     }
+  }
+
+  // Update description link to point to current project anchor on ongoing projects page
+  const descLink = qs('.projects__desc-link');
+  if (descLink && PROJECTS[currentProject]) {
+    descLink.href = 'projects/ongoing/#' + PROJECTS[currentProject].id;
+    descLink.textContent = 'EXPLORE PROJECT';
   }
 }
 

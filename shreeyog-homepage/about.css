@@ -1,0 +1,896 @@
+/* ==========================================================
+   SHREEYOG BUILDERS — DEDICATED ABOUT PAGE STYLESHEET
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   NAV ON LIGHT BACKGROUND
+   ---------------------------------------------------------- */
+.nav {
+  background: rgba(250, 248, 244, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav .nav__menu-btn,
+.nav .nav__menu-label,
+.nav .nav__contact,
+.nav .nav__search {
+  color: var(--charcoal);
+}
+.nav .nav__menu-icon span {
+  background: var(--charcoal);
+}
+
+/* Accessibility: instant reveals when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ----------------------------------------------------------
+   ABOUT HERO
+   ---------------------------------------------------------- */
+.about-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ivory);
+  overflow: hidden;
+  padding: 8rem 2.5rem 6rem;
+}
+
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.05);
+  animation: heroZoomIn 1.8s var(--ease-out) forwards;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 248, 244, 0.72) 0%,
+    rgba(250, 248, 244, 0.88) 55%,
+    rgba(250, 248, 244, 0.98) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-hero__label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.32em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.9s 0.3s var(--ease-out) forwards;
+}
+
+.about-hero__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeUp 1s 0.5s var(--ease-out) forwards;
+}
+
+.about-hero__heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--charcoal);
+}
+
+.about-hero__subtext {
+  font-family: var(--sans);
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--grey);
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.9s 0.7s var(--ease-out) forwards;
+}
+
+.about-hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeIn 1s 1.2s ease forwards;
+}
+
+.about-hero__scroll-label {
+  font-family: var(--sans);
+  font-size: 0.54rem;
+  letter-spacing: 0.24em;
+  color: var(--grey);
+  text-transform: uppercase;
+}
+
+.about-hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--charcoal), transparent);
+  animation: scrollPulse 2.2s 1.5s ease-in-out infinite;
+}
+
+@keyframes heroZoomIn {
+  from { transform: scale(1.08); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ----------------------------------------------------------
+   SECTION TWO: OUR STORY
+   ---------------------------------------------------------- */
+.about-story {
+  position: relative;
+  background: var(--white);
+  padding: 8.5rem 2.5rem 7.5rem;
+  overflow: hidden;
+}
+
+.about-story__bg-text {
+  position: absolute;
+  top: -0.06em;
+  right: -0.04em;
+  font-family: var(--serif);
+  font-size: clamp(9rem, 22vw, 19rem);
+  font-weight: 300;
+  color: rgba(73, 68, 63, 0.035);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+  will-change: transform;
+}
+
+.about-story__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.5rem;
+  align-items: center;
+}
+
+.about-story__heading {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.24;
+  color: var(--charcoal);
+  margin-bottom: 1.8rem;
+}
+
+.about-story__p {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.95;
+  color: var(--grey);
+  margin-bottom: 1.25rem;
+}
+
+.about-story__p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story__img-frame {
+  position: relative;
+}
+
+.about-story__img-frame::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid var(--color-dark-vanilla);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-story__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   SECTION THREE: OUR PHILOSOPHY & APPROACH
+   ---------------------------------------------------------- */
+.about-philosophy {
+  position: relative;
+  background: var(--color-azureish-white);
+  padding: 8.5rem 2.5rem 7.5rem;
+  overflow: hidden;
+}
+
+.about-philosophy__bg-text {
+  position: absolute;
+  top: -0.06em;
+  left: -0.04em;
+  font-family: var(--serif);
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 300;
+  color: rgba(73, 68, 63, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+  will-change: transform;
+}
+
+.about-philosophy__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.5rem;
+  align-items: center;
+}
+
+.about-philosophy__img-wrap {
+  position: relative;
+}
+
+.about-philosophy__img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  right: -22px;
+  left: 22px;
+  top: 22px;
+  border: 1px solid var(--color-dark-vanilla);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-philosophy__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-philosophy__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 3.6vw, 3.3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 1.8rem;
+}
+
+.about-philosophy__body {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  line-height: 1.95;
+  color: var(--grey);
+  margin-bottom: 2.4rem;
+}
+
+.about-philosophy__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid rgba(73, 68, 63, 0.15);
+  padding-top: 1.8rem;
+}
+
+.about-philosophy__pillar-num {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--color-dark-vanilla);
+  margin-bottom: 0.35rem;
+}
+
+.about-philosophy__pillar-title {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+/* ----------------------------------------------------------
+   SECTION FOUR: OUR JOURNEY (TIMELINE)
+   ---------------------------------------------------------- */
+.about-journey {
+  position: relative;
+  background: var(--cream);
+  padding: 8.5rem 2.5rem 8rem;
+  overflow: hidden;
+}
+
+.about-journey__bg-text {
+  position: absolute;
+  top: -0.06em;
+  right: -0.03em;
+  font-family: var(--serif);
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 300;
+  color: rgba(73, 68, 63, 0.035);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+  will-change: transform;
+}
+
+.about-journey__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-journey__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem;
+}
+
+.about-journey__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--charcoal);
+}
+
+/* Horizontal Timeline on Desktop */
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: rgba(73, 68, 63, 0.18);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item__top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.timeline-item__dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ivory);
+  border: 2px solid var(--color-dark-vanilla);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-item__dot {
+  transform: scale(1.3);
+  background: var(--color-dark-vanilla);
+  border-color: var(--charcoal);
+}
+
+.timeline-item__period {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: rgba(207, 182, 168, 0.2);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+}
+
+.timeline-item__idx {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-dark-vanilla);
+  margin-bottom: 1rem;
+}
+
+.timeline-item__title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.timeline-item__desc {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: var(--grey);
+}
+
+/* ----------------------------------------------------------
+   SECTION FIVE: OUR APPROACH
+   ---------------------------------------------------------- */
+.about-approach {
+  position: relative;
+  background: var(--ivory);
+  padding: 8.5rem 2.5rem 8rem;
+  overflow: hidden;
+}
+
+.about-approach__bg-text {
+  position: absolute;
+  top: -0.06em;
+  left: -0.03em;
+  font-family: var(--serif);
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 300;
+  color: rgba(73, 68, 63, 0.035);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+  will-change: transform;
+}
+
+.about-approach__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-approach__header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 5rem;
+}
+
+.about-approach__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.18;
+  color: var(--charcoal);
+}
+
+.about-approach__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(73, 68, 63, 0.12);
+  border-bottom: 1px solid rgba(73, 68, 63, 0.12);
+}
+
+.approach-card {
+  padding: 3.5rem 2.8rem;
+  border-right: 1px solid rgba(73, 68, 63, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.35s ease;
+}
+
+.approach-card:last-child {
+  border-right: none;
+}
+
+.approach-card:hover {
+  background: rgba(224, 238, 233, 0.35);
+}
+
+.approach-card__num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--color-dark-vanilla);
+  margin-bottom: 1.8rem;
+  line-height: 1;
+}
+
+.approach-card__title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--charcoal);
+  margin-bottom: 1.2rem;
+}
+
+.approach-card__desc {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--grey);
+}
+
+/* ----------------------------------------------------------
+   SECTION SIX: EXPLORE OUR PROJECTS
+   ---------------------------------------------------------- */
+.about-projects-preview {
+  position: relative;
+  background: var(--cream);
+  padding: 8rem 2.5rem;
+  overflow: hidden;
+}
+
+.about-projects-preview__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5.5rem;
+  align-items: center;
+}
+
+.about-projects-preview__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.about-projects-preview__desc {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  line-height: 1.95;
+  color: var(--grey);
+  margin-bottom: 2.5rem;
+  max-width: 460px;
+}
+
+.about-projects-preview__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+
+.about-projects-preview__btn-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-azureish-white);
+  border: 1px solid var(--color-dark-vanilla);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.about-projects-preview__btn:hover .about-projects-preview__btn-circle {
+  background: var(--color-dark-vanilla);
+  transform: translateX(4px);
+}
+
+.about-projects-preview__btn-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.about-projects-preview__visual {
+  position: relative;
+}
+
+.about-projects-preview__visual-frame {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(73, 68, 63, 0.08);
+}
+
+.about-projects-preview__img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.about-projects-preview__visual:hover .about-projects-preview__img {
+  transform: scale(1.03);
+}
+
+.about-projects-preview__badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1.4rem;
+  border-left: 2px solid var(--color-dark-vanilla);
+}
+
+.about-projects-preview__badge-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+}
+
+.about-projects-preview__badge-sub {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+/* ----------------------------------------------------------
+   SECTION SEVEN: FINAL CTA
+   ---------------------------------------------------------- */
+.about-cta {
+  position: relative;
+  background: var(--color-azureish-white);
+  padding: 9rem 2.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-cta__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 300;
+  line-height: 1.18;
+  color: var(--charcoal);
+  margin-bottom: 1.4rem;
+}
+
+.about-cta__subtext {
+  font-family: var(--sans);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  line-height: 1.8;
+  color: var(--grey);
+  margin-bottom: 3rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-cta__btn {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1.15rem 3.2rem;
+  transition: background 0.32s ease, border-color 0.32s ease, color 0.32s ease, transform 0.32s ease;
+}
+
+.about-cta__btn:hover {
+  background: var(--charcoal);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE DESIGN FOR ABOUT PAGE
+   ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .about-story__inner,
+  .about-philosophy__inner,
+  .about-projects-preview__inner {
+    gap: 4rem;
+  }
+
+  .timeline {
+    gap: 2rem;
+  }
+
+  .approach-card {
+    padding: 2.8rem 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    min-height: 70vh;
+    padding: 7rem 1.8rem 5rem;
+  }
+
+  .about-story,
+  .about-philosophy,
+  .about-journey,
+  .about-approach,
+  .about-projects-preview,
+  .about-cta {
+    padding: 6.5rem 1.8rem;
+  }
+
+  .about-story__inner,
+  .about-philosophy__inner,
+  .about-projects-preview__inner {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-story__img {
+    height: 420px;
+  }
+
+  .about-philosophy__img {
+    height: 400px;
+  }
+
+  .about-story__img-frame::before,
+  .about-philosophy__img-wrap::after {
+    display: none;
+  }
+
+  /* Switch Timeline to Vertical on Mobile / Tablet */
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(73, 68, 63, 0.18);
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item__top {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-item__dot {
+    position: absolute;
+    left: -1.5rem;
+    transform: translateX(-50%);
+    top: 6px;
+  }
+
+  .timeline-item:hover .timeline-item__dot {
+    transform: translateX(-50%) scale(1.3);
+  }
+
+  /* Stack Approach Grid on Mobile */
+  .about-approach__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(73, 68, 63, 0.12);
+    padding: 2.5rem 1rem;
+  }
+
+  .approach-card:last-child {
+    border-bottom: none;
+  }
+
+  .about-projects-preview__img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    min-height: 65vh;
+    padding: 6rem 1.2rem 4rem;
+  }
+
+  .about-hero__subtext {
+    letter-spacing: 0.16em;
+  }
+
+  .about-story,
+  .about-philosophy,
+  .about-journey,
+  .about-approach,
+  .about-projects-preview,
+  .about-cta {
+    padding: 5rem 1.2rem;
+  }
+
+  .about-philosophy__pillars {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .about-story__img {
+    height: 320px;
+  }
+
+  .about-philosophy__img {
+    height: 300px;
+  }
+
+  .about-projects-preview__img {
+    height: 280px;
+  }
+
+  .about-cta__btn {
+    padding: 1rem 2.4rem;
+    width: 100%;
+    max-width: 320px;
+  }
+}

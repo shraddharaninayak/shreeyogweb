@@ -445,7 +445,7 @@ function buildTestimonials() {
     slide.innerHTML = `
       <p class="testimonial-slide__quote">${t.quote}</p>
       <div class="testimonial-slide__avatar" aria-hidden="true">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-sand)" stroke-width="1">
           <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
           <circle cx="12" cy="7" r="4"/>
         </svg>
@@ -532,7 +532,7 @@ if ('IntersectionObserver' in window) {
   // Respect reduced-motion: reveal everything at once and bail out
   if (reduceMotion.matches) {
     if (img)     { img.style.opacity = '1';  img.style.transform = 'scale(1)'; }
-    if (overlay)   overlay.style.background = 'rgba(0,0,0,0.52)';
+    if (overlay)   overlay.style.background = 'rgba(88,71,56,0.58)';
     if (decor)     decor.style.opacity = '1';
     if (line1)   { line1.style.opacity = '1'; line1.style.transform = 'translateY(0)'; }
     if (line2)   { line2.style.opacity = '1'; line2.style.transform = 'translateY(0)'; }
@@ -566,10 +566,10 @@ if ('IntersectionObserver' in window) {
       img.style.transform = 'scale(' + (1.08 - 0.08 * ei).toFixed(5) + ')';
     }
 
-    // Overlay — eases from 0.72 to 0.52 as section enters
+    // Overlay — eases from 0.78 to 0.58 as section enters
     if (overlay) {
       overlay.style.background =
-        'rgba(0,0,0,' + (0.72 - 0.20 * eOut(p)).toFixed(3) + ')';
+        'rgba(88,71,56,' + (0.78 - 0.20 * eOut(p)).toFixed(3) + ')';
     }
 
     // Decorative grid — opacity only, starts at p=0.10

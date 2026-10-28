@@ -16,8 +16,31 @@
   <!-- ======================================================
        NAVIGATION
   ====================================================== -->
-  <nav class="nav" id="mainNav">
+  <nav class="nav scrolled" id="mainNav">
     <div class="nav__left">
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__logo" aria-label="Shreeyog Builders — Home">
+        <img
+          src="images/shreeyog-logo.png"
+          alt="Shreeyog Builders"
+          class="nav__logo-img"
+          width="135"
+        />
+      </a>
+    </div>
+
+    <div class="nav__center">
+      <ul class="nav__desktop-menu">
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__desktop-link">Home</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="nav__desktop-link nav__desktop-link--active">About Us</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="nav__desktop-link">Projects</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="nav__desktop-link">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="nav__right">
+      <button type="button" class="nav__btn-enquire" id="navEnquireBtn">
+        Enquire Now
+      </button>
       <button class="nav__menu-btn" id="menuOpen" aria-label="Open menu">
         <span class="nav__menu-icon">
           <span></span>
@@ -26,25 +49,6 @@
         </span>
         <span class="nav__menu-label">MENU</span>
       </button>
-    </div>
-    <div class="nav__center">
-      <a href="index.html" class="nav__logo" aria-label="Shreeyog Builders — Home">
-        <img
-          src="images/shreeyog-logo.png"
-          alt="Shreeyog Builders"
-          class="nav__logo-img"
-          width="130"
-        />
-      </a>
-    </div>
-    <div class="nav__right">
-      <a href="tel:+19194225141" class="nav__contact">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        919-422-5141
-      </a>
-      <a href="index.html#projects" class="nav__search" aria-label="View Projects">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </a>
     </div>
   </nav>
 
@@ -354,12 +358,11 @@
         </div>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects/ongoing/">Ongoing Projects</a>
-        <a href="projects/completed/">Completed Projects</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/#home">Home</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html">About Us</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html">Projects</a>
         <a href="#approach">Approach</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact">Contact Us</a>
       </nav>
       <p class="footer__copy">&copy; 2026 Shreeyog Builders Pvt. Ltd. All rights reserved.</p>
     </div>
@@ -369,28 +372,27 @@
        MOBILE MENU OVERLAY
   ====================================================== -->
   <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-    <button class="menu-overlay__close" id="menuClose" aria-label="Close menu">
-      <span></span>
-      <span></span>
-    </button>
+    <div class="menu-overlay__header">
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__logo" aria-label="Shreeyog Builders — Home">
+        <img src="images/shreeyog-logo.png" alt="Shreeyog Builders" width="125" />
+      </a>
+      <button class="menu-overlay__close" id="menuClose" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
     <nav class="menu-overlay__nav" aria-label="Mobile navigation">
-      <a href="index.html" class="menu-overlay__link">Home</a>
-      <a href="about.html" class="menu-overlay__link" style="color: var(--color-mahogany); font-weight: 500;">About</a>
-      <div class="menu-overlay__item-has-children">
-        <button class="menu-overlay__link menu-overlay__dropdown-toggle" aria-expanded="false">
-          Projects
-          <svg class="chevron-icon" width="12" height="8" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1L5 5L9 1"/></svg>
-        </button>
-        <div class="menu-overlay__sub-menu" style="display: none;">
-          <a href="projects/ongoing/" class="menu-overlay__sub-link">Ongoing Projects</a>
-          <a href="projects/completed/" class="menu-overlay__sub-link">Completed Projects</a>
-        </div>
-      </div>
-      <a href="index.html#services" class="menu-overlay__link">Services</a>
-      <a href="#approach" class="menu-overlay__link">Approach</a>
-      <a href="index.html#contact" class="menu-overlay__link">Contact</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__link">Home</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="menu-overlay__link" style="color: var(--color-tobacco); font-weight: 500;">About Us</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="menu-overlay__link">Projects</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="menu-overlay__link">Contact Us</a>
     </nav>
-    <p class="menu-overlay__footer-contact">919-422-5141</p>
+    <div class="menu-overlay__actions">
+      <a href="tel:+19194225141" class="menu-overlay__footer-contact">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        919-422-5141
+      </a>
+    </div>
   </div>
 
   <script src="about.js"></script>

@@ -5,60 +5,8 @@
    ========================================================== */
 
 // ----------------------------------------------------------
-// DATA
+// DATA (Projects data loaded globally from projects-data.js)
 // ----------------------------------------------------------
-const PROJECTS = [
-  {
-    id:   'shri-venkatesh',
-    name: 'Shri Venkatesh',
-    img:  'images/venkatesh-real.png',
-    alt:  'Shri Venkatesh — residential exterior',
-    desc: 'A premium residential development crafted with meticulous attention to detail, offering modern 2 & 3 BHK homes designed for refined everyday living.'
-  },
-  {
-    id:   'shri-brahmand',
-    name: 'Shri Brahmand',
-    img:  'images/bramhand-real.jpg',
-    alt:  'Shri Brahmand — residential exterior',
-    desc: 'Thoughtfully planned living spaces that balance architectural elegance with the warmth and comfort a home deserves.'
-  },
-  {
-    id:   'shri-neelkanth',
-    name: 'Shri Neelkanth',
-    img:  'images/neelkanth-real.jpg',
-    alt:  'Shri Neelkanth — residential exterior',
-    desc: 'A distinguished residential community where contemporary design meets enduring quality, tailored for those with discerning standards.'
-  },
-  {
-    id:   'shri-nandan',
-    name: 'Shri Nandan',
-    img:  'images/nandan-real.jpg',
-    alt:  'Shri Nandan — residential exterior',
-    desc: 'Serene, well-considered residences designed to offer a complete living experience with generous spaces and refined finishes.'
-  },
-  {
-    id:   'shri-malhar',
-    name: 'Shri Malhar',
-    img:  'images/malhar-real.jpg',
-    alt:  'Shri Malhar — residential exterior',
-    desc: "Carefully designed homes that reflect Shreeyog's commitment to architectural integrity, quality materials, and timeless aesthetics."
-  },
-  {
-    id:   'shri-murlidhar-park',
-    name: 'Shri Murlidhar Park',
-    img:  'images/murlidhar-real.jpg',
-    alt:  'Shri Murlidhar Park — residential exterior',
-    desc: 'A residential enclave offering well-proportioned homes within a considered environment, crafted for long-term comfort and value.'
-  },
-  {
-    id:   'shri-pandurang',
-    name: 'Shri Pandurang',
-    img:  'images/pandurang-real.jpg',
-    alt:  'Shri Pandurang — residential exterior',
-    desc: 'Premium homes designed with purpose and precision, bringing together quality craftsmanship and spaces that inspire everyday life.'
-  }
-];
-
 const TESTIMONIALS = [
   {
     quote: '"Shreeyog delivered a home that exceeded every expectation. The craftsmanship and attention to detail is simply unmatched."',
@@ -93,20 +41,37 @@ window.addEventListener('scroll', handleNavScroll, { passive: true });
 handleNavScroll();
 
 // ----------------------------------------------------------
-// HERO: trigger image scale-in after load
+// HERO: video background & entrance initialization
 // ----------------------------------------------------------
 const heroSection = qs('.hero');
-const heroImg     = qs('#heroImg');
+const heroVideo   = qs('#heroVideo');
 
-if (heroImg && heroSection) {
-  const onLoad = () => heroSection.classList.add('loaded');
-  if (heroImg.complete) {
-    onLoad();
+if (heroVideo && heroSection) {
+  heroVideo.muted = true;
+  const advanceToVisual = () => {
+    try {
+      if (heroVideo.currentTime < 2) heroVideo.currentTime = 3.5;
+    } catch (_) {}
+  };
+  if (heroVideo.readyState >= 1) {
+    advanceToVisual();
   } else {
-    heroImg.addEventListener('load', onLoad);
-    // Fallback: still trigger after 1.5 s even if no load event fires
-    setTimeout(onLoad, 1500);
+    heroVideo.addEventListener('loadedmetadata', advanceToVisual, { once: true });
   }
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        heroSection.classList.add('loaded');
+      })
+      .catch(() => {
+        heroSection.classList.add('loaded');
+      });
+  } else {
+    heroSection.classList.add('loaded');
+  }
+} else if (heroSection) {
+  heroSection.classList.add('loaded');
 }
 
 // ----------------------------------------------------------
@@ -257,47 +222,232 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeMenu();
 });
 
-// ----------------------------------------------------------
-// PROJECTS CAROUSEL
-// ----------------------------------------------------------
-const projectsTrack   = qs('#projectsTrack');
-const projectNameEl   = qs('#projectName');
-const projectCurrentEl= qs('#projectCurrent');
-const projectTotalEl  = qs('#projectTotal');
-const projectPrevBtn  = qs('#projectPrev');
-const projectNextBtn  = qs('#projectNext');
-const projectDescEl   = qs('#projectDesc');
-const projectDescTextEl = qs('#projectDescText');
+// Mobile menu "Enquire Now" button
+const mobileEnquireBtn = qs('#mobileEnquireBtn');
+if (mobileEnquireBtn) {
+  mobileEnquireBtn.addEventListener('click', () => {
+    closeMenu();
+    openEnquiryModal('enquiry');
+  });
+}
 
-let currentProject      = 0;
-let projectSlides       = [];
-let projectsInitialized = false;
+// ----------------------------------------------------------
+// ENQUIRY & SITE VISIT MODAL CONTROLLER
+// ----------------------------------------------------------
+const enquiryModal     = qs('#enquiryModal');
+const modalCloseBtn    = qs('#modalClose');
+const modalBackdrop    = qs('#modalBackdrop');
+const tabEnquiry       = qs('#tabEnquiry');
+const tabSiteVisit     = qs('#tabSiteVisit');
+const modalHeading     = qs('#modalHeading');
+const visitDateGroup   = qs('#visitDateGroup');
+const enquiryTypeInput = qs('#enquiryTypeInput');
+const enquiryForm      = qs('#enquiryForm');
+const enquirySuccess   = qs('#enquirySuccess');
+const submitEnquiryBtn = qs('#submitEnquiryBtn');
+const navEnquireBtn    = qs('#navEnquireBtn');
+const bookVisitBtn     = qs('#bookVisitBtn');
+
+function setModalMode(mode) {
+  const isVisit = mode === 'site-visit';
+  if (tabEnquiry && tabSiteVisit) {
+    tabEnquiry.classList.toggle('enquiry-modal__tab--active', !isVisit);
+    tabEnquiry.setAttribute('aria-selected', !isVisit);
+    tabSiteVisit.classList.toggle('enquiry-modal__tab--active', isVisit);
+    tabSiteVisit.setAttribute('aria-selected', isVisit);
+  }
+  if (modalHeading) {
+    modalHeading.textContent = isVisit ? 'Book a Private Site Visit' : 'Schedule Your Consultation';
+  }
+  if (visitDateGroup) {
+    visitDateGroup.style.display = isVisit ? 'block' : 'none';
+    const dateInput = qs('#leadVisitDate');
+    if (dateInput) dateInput.required = isVisit;
+  }
+  if (enquiryTypeInput) {
+    enquiryTypeInput.value = isVisit ? 'Book a Site Visit' : 'General Enquiry';
+  }
+  if (submitEnquiryBtn) {
+    const label = submitEnquiryBtn.querySelector('span');
+    if (label) label.textContent = isVisit ? 'Confirm Site Visit Request' : 'Submit Request';
+  }
+}
+
+function openEnquiryModal(mode = 'enquiry') {
+  if (!enquiryModal) return;
+  setModalMode(mode);
+  if (enquirySuccess) enquirySuccess.style.display = 'none';
+  if (enquiryForm) {
+    const inputs = enquiryForm.querySelectorAll('input, select, textarea');
+    inputs.forEach(el => el.disabled = false);
+    if (submitEnquiryBtn) submitEnquiryBtn.style.display = 'inline-flex';
+  }
+  enquiryModal.classList.add('open');
+  enquiryModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  const nameInput = qs('#leadName');
+  if (nameInput) setTimeout(() => nameInput.focus(), 120);
+}
+
+function closeEnquiryModal() {
+  if (!enquiryModal) return;
+  enquiryModal.classList.remove('open');
+  enquiryModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (navEnquireBtn) navEnquireBtn.addEventListener('click', () => openEnquiryModal('enquiry'));
+if (bookVisitBtn)  bookVisitBtn.addEventListener('click', () => openEnquiryModal('site-visit'));
+if (tabEnquiry)    tabEnquiry.addEventListener('click', () => setModalMode('enquiry'));
+if (tabSiteVisit)  tabSiteVisit.addEventListener('click', () => setModalMode('site-visit'));
+if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeEnquiryModal);
+if (modalBackdrop) modalBackdrop.addEventListener('click', closeEnquiryModal);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && enquiryModal && enquiryModal.classList.contains('open')) {
+    closeEnquiryModal();
+  }
+});
+
+// Form submission validation & feedback
+if (enquiryForm) {
+  enquiryForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nameInput  = qs('#leadName');
+    const phoneInput = qs('#leadPhone');
+    const nameErr    = qs('#nameError');
+    const phoneErr   = qs('#phoneError');
+
+    let isValid = true;
+    if (nameErr) nameErr.textContent = '';
+    if (phoneErr) phoneErr.textContent = '';
+
+    if (!nameInput || !nameInput.value.trim()) {
+      if (nameErr) nameErr.textContent = 'Please enter your full name.';
+      isValid = false;
+    }
+
+    if (!phoneInput || !phoneInput.value.trim() || phoneInput.value.trim().length < 8) {
+      if (phoneErr) phoneErr.textContent = 'Please provide a valid phone number.';
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    if (submitEnquiryBtn) {
+      submitEnquiryBtn.disabled = true;
+      const span = submitEnquiryBtn.querySelector('span');
+      if (span) span.textContent = 'Sending...';
+    }
+
+    setTimeout(() => {
+      if (enquirySuccess) enquirySuccess.style.display = 'block';
+      if (submitEnquiryBtn) submitEnquiryBtn.style.display = 'none';
+      enquiryForm.reset();
+      setTimeout(() => {
+        closeEnquiryModal();
+        if (submitEnquiryBtn) {
+          submitEnquiryBtn.disabled = false;
+          submitEnquiryBtn.style.display = 'inline-flex';
+          const span = submitEnquiryBtn.querySelector('span');
+          if (span) span.textContent = 'Submit Request';
+        }
+      }, 3500);
+    }, 600);
+  });
+}
+
+// ----------------------------------------------------------
+// PROJECTS SECTION & CATEGORY SWITCHER
+// ----------------------------------------------------------
+const projectsTrack       = qs('#projectsTrack');
+const projectsShowcase    = qs('#projectsShowcase');
+const projectsMeta        = qs('#projectsMeta');
+const projectsPlaceholder = qs('#projectsPlaceholder');
+const projectNameEl       = qs('#projectName');
+const projectCurrentEl    = qs('#projectCurrent');
+const projectTotalEl      = qs('#projectTotal');
+const projectPrevBtn      = qs('#projectPrev');
+const projectNextBtn      = qs('#projectNext');
+const projectDescEl       = qs('#projectDesc');
+const projectDescBadgeEl  = qs('#projectDescBadge');
+const projectDescLabelEl  = qs('#projectDescLabel');
+const projectDescTextEl   = qs('#projectDescText');
+const projectDescLinkEl   = qs('#projectDescLink');
+const ongoingEnquireBtn   = qs('#ongoingEnquireBtn');
+const categoryTabs        = qsa('.projects__tab');
+
+let currentCategory       = 'completed'; // Default to Completed Projects (9 delivered landmarks)
+let currentProjects       = [];
+let currentProject        = 0;
+let projectSlides         = [];
+let projectsInitialized   = false;
 let nameTimer;
 let descTimer;
 
+function getProjectsForCurrentCategory() {
+  if (typeof ALL_PROJECTS !== 'undefined' && Array.isArray(ALL_PROJECTS)) {
+    return ALL_PROJECTS.filter(p => p.category === currentCategory);
+  }
+  return [];
+}
+
 function buildProjectSlides() {
   if (!projectsTrack) return;
-  if (projectTotalEl) projectTotalEl.textContent = PROJECTS.length;
 
-  PROJECTS.forEach((project, i) => {
+  currentProjects = getProjectsForCurrentCategory();
+  projectsTrack.innerHTML = '';
+  projectSlides = [];
+  currentProject = 0;
+
+  if (currentProjects.length === 0) {
+    if (projectsShowcase) projectsShowcase.style.display = 'none';
+    if (projectsMeta) projectsMeta.style.display = 'none';
+    if (projectsPlaceholder) projectsPlaceholder.style.display = 'flex';
+    return;
+  }
+
+  if (projectsShowcase) projectsShowcase.style.display = 'flex';
+  if (projectsMeta) projectsMeta.style.display = 'block';
+  if (projectsPlaceholder) projectsPlaceholder.style.display = 'none';
+
+  if (projectTotalEl) projectTotalEl.textContent = String(currentProjects.length);
+
+  currentProjects.forEach((project, i) => {
     const slide = document.createElement('div');
     slide.className = 'project-slide';
+    slide.setAttribute('data-id', project.id);
+    slide.setAttribute('role', 'button');
+    slide.setAttribute('tabindex', '0');
+    slide.setAttribute('aria-label', project.name);
 
     const img = document.createElement('img');
-    img.src     = project.img;
-    img.alt     = project.alt;
+    img.src = project.image;
+    img.alt = project.name + ' — ' + (project.category === 'completed' ? 'Completed Landmark' : 'Ongoing Development') + ' by Shreeyog Builders';
     img.className = 'project-slide__img';
     img.loading = 'lazy';
 
     slide.appendChild(img);
 
-    // Clicking an adjacent slide navigates to it; clicking the active slide navigates to the project anchor
     slide.addEventListener('click', () => {
       if (i !== currentProject) {
         currentProject = i;
         updateCarousel(true);
-      } else {
-        window.location.href = 'projects/ongoing/#' + project.id;
+      } else if (project.projectDetailsUrl) {
+        window.location.href = project.projectDetailsUrl;
+      }
+    });
+
+    slide.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (i !== currentProject) {
+          currentProject = i;
+          updateCarousel(true);
+        } else if (project.projectDetailsUrl) {
+          window.location.href = project.projectDetailsUrl;
+        }
       }
     });
 
@@ -306,11 +456,11 @@ function buildProjectSlides() {
   });
 
   updateCarousel();
-  projectsInitialized = true; // crossfade activates after initial build
+  projectsInitialized = true;
 }
 
 function updateCarousel(isNavigation) {
-  if (!projectsTrack || projectSlides.length === 0) return;
+  if (!projectsTrack || projectSlides.length === 0 || currentProjects.length === 0) return;
 
   // Apply state classes
   projectSlides.forEach((slide, i) => {
@@ -321,82 +471,119 @@ function updateCarousel(isNavigation) {
     else                 slide.classList.add('hidden');
   });
 
-  // Force layout reflow so offsetWidth reflects new classes
   void projectsTrack.offsetWidth;
 
-  // Calculate translate so active slide is centred in the stage
   const stage  = projectsTrack.parentElement;
   const stageW = stage ? stage.offsetWidth : window.innerWidth * 0.8;
-  const gap    = 32; // 2rem in px at 16px base
+  const gap    = 32;
 
   let offsetBefore = 0;
   for (let i = 0; i < currentProject; i++) {
     offsetBefore += projectSlides[i].offsetWidth + gap;
   }
-  const activeW  = projectSlides[currentProject].offsetWidth;
+  const activeW   = projectSlides[currentProject].offsetWidth;
   const translate = offsetBefore - (stageW / 2 - activeW / 2);
 
   projectsTrack.style.transform = `translateX(${-Math.max(0, translate)}px)`;
 
-  // Update counter immediately (no need to animate this)
   if (projectCurrentEl) projectCurrentEl.textContent = String(currentProject + 1);
 
-  // Update name: instant on initial render, crossfade on navigation
+  const activeData = currentProjects[currentProject];
+  if (!activeData) return;
+
+  // Update name
   if (projectNameEl) {
-    const newName = PROJECTS[currentProject].name;
+    const newName = activeData.name;
     if (!projectsInitialized || projectNameEl.textContent === newName) {
-      // First render or same project (e.g. resize) — set immediately
       projectNameEl.textContent = newName;
       projectNameEl.style.opacity = '1';
     } else {
-      // Navigating to a new project — crossfade the name out then in
       clearTimeout(nameTimer);
       projectNameEl.style.opacity = '0';
       nameTimer = setTimeout(() => {
         projectNameEl.textContent = newName;
         projectNameEl.style.opacity = '1';
-      }, 280);
+      }, 240);
     }
   }
 
-  // Update description panel: hidden on initial build, revealed + crossfade on navigation
-  if (projectDescEl && projectDescTextEl) {
-    const newDesc = PROJECTS[currentProject].desc;
-    if (!projectsInitialized) {
-      // Initial build: populate text silently, keep panel hidden
-      projectDescTextEl.textContent = newDesc;
-    } else if (isNavigation && !projectDescEl.classList.contains('visible')) {
-      // First user navigation: reveal panel with text already set
-      projectDescTextEl.textContent = newDesc;
-      requestAnimationFrame(() => projectDescEl.classList.add('visible'));
-    } else if (projectDescEl.classList.contains('visible') && projectDescTextEl.textContent !== newDesc) {
-      // Navigating between projects: crossfade the description text
-      clearTimeout(descTimer);
-      projectDescTextEl.classList.add('fading');
-      descTimer = setTimeout(() => {
+  // Update description badge, label & text
+  if (projectDescEl) {
+    if (projectDescBadgeEl) {
+      projectDescBadgeEl.textContent = activeData.category === 'completed' ? 'COMPLETED' : 'ONGOING';
+    }
+    if (projectDescLabelEl) {
+      projectDescLabelEl.textContent = activeData.category === 'completed' ? 'DELIVERED LANDMARK' : 'ONGOING DEVELOPMENT';
+    }
+
+    const newDesc = activeData.shortDescription || (activeData.name + ' by Shreeyog Builders & Land Developers in ' + (activeData.location || 'Nashik, Maharashtra') + '.');
+
+    if (projectDescTextEl) {
+      if (!projectsInitialized) {
         projectDescTextEl.textContent = newDesc;
-        projectDescTextEl.classList.remove('fading');
-      }, 350);
+      } else if (isNavigation && !projectDescEl.classList.contains('visible')) {
+        projectDescTextEl.textContent = newDesc;
+        requestAnimationFrame(() => projectDescEl.classList.add('visible'));
+      } else if (projectDescEl.classList.contains('visible') && projectDescTextEl.textContent !== newDesc) {
+        clearTimeout(descTimer);
+        projectDescTextEl.classList.add('fading');
+        descTimer = setTimeout(() => {
+          projectDescTextEl.textContent = newDesc;
+          projectDescTextEl.classList.remove('fading');
+        }, 300);
+      }
+    }
+
+    if (projectDescLinkEl) {
+      if (activeData.projectDetailsUrl) {
+        projectDescLinkEl.style.display = 'inline-block';
+        projectDescLinkEl.href = activeData.projectDetailsUrl;
+        projectDescLinkEl.textContent = 'VIEW PROJECT';
+      } else {
+        projectDescLinkEl.style.display = 'none';
+      }
     }
   }
+}
 
-  // Update description link to point to current project anchor on ongoing projects page
-  const descLink = qs('.projects__desc-link');
-  if (descLink && PROJECTS[currentProject]) {
-    descLink.href = 'projects/ongoing/#' + PROJECTS[currentProject].id;
-    descLink.textContent = 'EXPLORE PROJECT';
-  }
+// Category Tabs Interaction
+if (categoryTabs.length > 0) {
+  categoryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const selectedCat = tab.getAttribute('data-category');
+      if (selectedCat === currentCategory) return;
+      currentCategory = selectedCat;
+
+      categoryTabs.forEach(t => {
+        const isActive = t === tab;
+        t.classList.toggle('projects__tab--active', isActive);
+        t.setAttribute('aria-selected', String(isActive));
+      });
+
+      buildProjectSlides();
+    });
+  });
+}
+
+// Placeholder Enquire Button (for Ongoing Launches)
+if (ongoingEnquireBtn) {
+  ongoingEnquireBtn.addEventListener('click', () => {
+    const navBtn = qs('#navEnquireBtn');
+    if (navBtn) navBtn.click();
+  });
 }
 
 if (projectPrevBtn) {
   projectPrevBtn.addEventListener('click', () => {
-    currentProject = (currentProject - 1 + PROJECTS.length) % PROJECTS.length;
+    if (currentProjects.length <= 1) return;
+    currentProject = (currentProject - 1 + currentProjects.length) % currentProjects.length;
     updateCarousel(true);
   });
 }
 if (projectNextBtn) {
   projectNextBtn.addEventListener('click', () => {
-    currentProject = (currentProject + 1) % PROJECTS.length;
+    if (currentProjects.length <= 1) return;
+    currentProject = (currentProject + 1) % currentProjects.length;
     updateCarousel(true);
   });
 }
@@ -404,15 +591,15 @@ if (projectNextBtn) {
 // Keyboard navigation while projects section is in view
 document.addEventListener('keydown', e => {
   const section = qs('.projects');
-  if (!section) return;
+  if (!section || currentProjects.length <= 1) return;
   const rect = section.getBoundingClientRect();
   if (rect.top > window.innerHeight || rect.bottom < 0) return;
   if (e.key === 'ArrowLeft') {
-    currentProject = (currentProject - 1 + PROJECTS.length) % PROJECTS.length;
+    currentProject = (currentProject - 1 + currentProjects.length) % currentProjects.length;
     updateCarousel(true);
   }
   if (e.key === 'ArrowRight') {
-    currentProject = (currentProject + 1) % PROJECTS.length;
+    currentProject = (currentProject + 1) % currentProjects.length;
     updateCarousel(true);
   }
 });

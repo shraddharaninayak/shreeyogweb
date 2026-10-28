@@ -1,136 +1,115 @@
 /* ==========================================================
    SHREEYOG BUILDERS — PROJECT DATA REPOSITORY
    ==========================================================
-   Edit this file to update project details, descriptions,
-   images, and status across the Shreeyog Builders website.
+   Unified data structure for all Shreeyog Builders projects.
+   Categories supported: 'ongoing', 'completed', 'upcoming'
    ========================================================== */
 
-const ONGOING_PROJECTS = [
+const ALL_PROJECTS = [
+  // ----------------------------------------------------------
+  // COMPLETED PROJECTS (9 Verified Delivered Developments)
+  // ----------------------------------------------------------
   {
-    id: 'shri-venkatesh',
-    name: 'Shri Venkatesh',
-    configuration: '2 & 3 BHK Modern Homes',
+    id: 'shree-vishwa',
+    name: 'ShreeVishwa',
+    category: 'completed',
+    image: 'images/projects/shree-vishwa.jpg',
+    shortDescription: 'Completed residential landmark by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential Development',
-    description: 'A premium residential development crafted with meticulous attention to detail, offering modern 2 & 3 BHK homes designed for refined everyday living.',
-    image: 'images/venkatesh-real.png',
-    alt: 'Shri Venkatesh — residential exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-vishwa'
   },
   {
-    id: 'shri-brahmand',
-    name: 'Shri Brahmand',
-    configuration: '2 & 3 BHK Modern Homes',
+    id: 'shree-samruddhi-park',
+    name: 'ShreeSamruddhi Park',
+    category: 'completed',
+    image: 'images/projects/shree-samruddhi-park.jpg',
+    shortDescription: 'Completed residential development by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential Development',
-    description: 'Thoughtfully planned living spaces that balance architectural elegance with the warmth and comfort a home deserves.',
-    image: 'images/bramhand-real.jpg',
-    alt: 'Shri Brahmand — residential exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: 'images/new images/ShreeSamruddhi brochure .pdf',
+    projectDetailsUrl: 'projects/completed/#shree-samruddhi-park'
   },
   {
-    id: 'shri-neelkanth',
-    name: 'Shri Neelkanth',
-    configuration: '2 & 3 BHK Luxurious Flats',
+    id: 'shree-neelkanth',
+    name: 'ShreeNeelkanth',
+    category: 'completed',
+    image: 'images/projects/shree-neelkanth.jpg',
+    shortDescription: 'Completed residential landmark by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential Development',
-    description: 'A distinguished residential community where contemporary design meets enduring quality, tailored for those with discerning standards.',
-    image: 'images/neelkanth-real.jpg',
-    alt: 'Shri Neelkanth — residential exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: 'images/new images/Neelkanth 11.25 x 11.25 - final - 1.pdf',
+    projectDetailsUrl: 'projects/completed/#shree-neelkanth'
   },
   {
-    id: 'shri-nandan',
-    name: 'Shri Nandan',
-    configuration: '2 & 3 BHK Luxurious Flats',
+    id: 'shree-padma',
+    name: 'ShreePadma',
+    category: 'completed',
+    image: 'images/projects/shree-padma.jpg',
+    shortDescription: 'Completed residential development by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential Development',
-    description: 'Serene, well-considered residences designed to offer a complete living experience with generous spaces and refined finishes.',
-    image: 'images/nandan-real.jpg',
-    alt: 'Shri Nandan — residential exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-padma'
   },
   {
-    id: 'shri-malhar',
-    name: 'Shri Malhar',
-    configuration: '3 BHK Luxurious Flats',
+    id: 'shree-anant',
+    name: 'ShreeAnant',
+    category: 'completed',
+    image: 'images/projects/shree-anant.svg',
+    shortDescription: 'Completed residential development by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential Development',
-    description: "Carefully designed homes that reflect Shreeyog's commitment to architectural integrity, quality materials, and timeless aesthetics.",
-    image: 'images/malhar-real.jpg',
-    alt: 'Shri Malhar — residential exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-anant'
   },
   {
-    id: 'shri-murlidhar-park',
-    name: 'Shri Murlidhar Park',
-    configuration: '1, 2 & 3 BHK Luxurious Flats & Shops',
+    id: 'shree-niwas',
+    name: 'ShreeNiwas',
+    category: 'completed',
+    image: 'images/projects/shree-niwas.svg',
+    shortDescription: 'Completed residential development by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential & Commercial Development',
-    description: 'A residential and commercial enclave offering well-proportioned homes and retail spaces within a considered environment, crafted for long-term comfort and value.',
-    image: 'images/murlidhar-real.jpg',
-    alt: 'Shri Murlidhar Park — residential and commercial exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-niwas'
   },
   {
-    id: 'shri-pandurang',
-    name: 'Shri Pandurang',
-    configuration: '2 & 3 BHK Luxurious Flats',
+    id: 'shree-nath-enclave',
+    name: 'ShreeNath Enclave',
+    category: 'completed',
+    image: 'images/projects/shree-nath-enclave.svg',
+    shortDescription: 'Completed residential enclave by Shreeyog Builders and Land Developers.',
     location: 'Nashik, Maharashtra',
-    status: 'Ongoing Residential Development',
-    description: 'Premium homes designed with purpose and precision, bringing together quality craftsmanship and spaces that inspire everyday life.',
-    image: 'images/pandurang-real.jpg',
-    alt: 'Shri Pandurang — residential exterior by Shreeyog Builders',
-    badge: 'Ongoing'
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-nath-enclave'
+  },
+  {
+    id: 'shree-navshakti',
+    name: 'ShreeNavshakti',
+    category: 'completed',
+    image: 'images/projects/shree-navshakti.svg',
+    shortDescription: 'Completed residential development by Shreeyog Builders and Land Developers.',
+    location: 'Nashik, Maharashtra',
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-navshakti'
+  },
+  {
+    id: 'shree-swarup',
+    name: 'ShreeSwarup',
+    category: 'completed',
+    image: 'images/projects/shree-swarup.jpg',
+    shortDescription: 'Completed residential landmark by Shreeyog Builders and Land Developers.',
+    location: 'Nashik, Maharashtra',
+    brochure: '',
+    projectDetailsUrl: 'projects/completed/#shree-swarup'
   }
+
+  // ----------------------------------------------------------
+  // ONGOING PROJECTS
+  // Awaiting verified client details. Populated automatically
+  // when client provides ongoing developments.
+  // ----------------------------------------------------------
 ];
 
-const COMPLETED_PROJECTS = [
-  {
-    id: 'shri-nakshatra',
-    name: 'Shri Nakshatra',
-    configuration: 'Delivered Residential Landmark',
-    location: 'Nashik, Maharashtra',
-    status: 'Completed Project — Delivered',
-    description: 'A landmark residential development delivered with exceptional craftsmanship, structural durability, and enduring community value in Nashik.',
-    image: 'images/nakshatra-real.jpg',
-    alt: 'Shri Nakshatra — completed residential landmark by Shreeyog Builders',
-    badge: 'Completed'
-  },
-  {
-    id: 'shri-vrindavan',
-    name: 'Shri Vrindavan',
-    configuration: 'Delivered Residential Landmark',
-    location: 'Nashik, Maharashtra',
-    status: 'Completed Project — Delivered',
-    description: 'A completed residential sanctuary designed for comfort, architectural harmony, and timeless family living.',
-    image: 'images/vrindavan-real.jpg',
-    alt: 'Shri Vrindavan — completed residential landmark by Shreeyog Builders',
-    badge: 'Completed'
-  },
-  {
-    id: 'shri-chintan',
-    name: 'Shri Chintan',
-    configuration: 'Residential & Commercial Landmark',
-    location: 'Nashik, Maharashtra',
-    status: 'Completed Project — Delivered',
-    description: 'A thoughtfully planned mixed-use development combining modern residential spaces with functional commercial premises.',
-    image: 'images/chintan-real.jpg',
-    alt: 'Shri Chintan — completed residential and commercial development by Shreeyog Builders',
-    badge: 'Completed'
-  },
-  {
-    id: 'shri-shakuntal',
-    name: 'Shri Shakuntal',
-    configuration: 'Delivered Premium Residences',
-    location: 'Nashik, Maharashtra',
-    status: 'Completed Project — Delivered',
-    description: 'A signature residential address crafted with architectural precision, premium finishes, and enduring structural integrity.',
-    image: 'images/shakuntal-real.jpg',
-    alt: 'Shri Shakuntal — completed premium residences by Shreeyog Builders',
-    badge: 'Completed'
-  }
-];
+// Computed helpers to preserve existing API for standalone project pages
+const ONGOING_PROJECTS = ALL_PROJECTS.filter(p => p.category === 'ongoing');
+const COMPLETED_PROJECTS = ALL_PROJECTS.filter(p => p.category === 'completed');
 
 // Verified Community Amenities (featured on Completed Projects)
 const COMPLETED_AMENITIES = [
@@ -182,5 +161,5 @@ const COMPLETED_AMENITIES = [
 ];
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { ONGOING_PROJECTS, COMPLETED_PROJECTS, COMPLETED_AMENITIES };
+  module.exports = { ALL_PROJECTS, ONGOING_PROJECTS, COMPLETED_PROJECTS, COMPLETED_AMENITIES };
 }

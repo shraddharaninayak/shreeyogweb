@@ -277,12 +277,15 @@
     }
   }
 
-  if (categoryTabs.length > 0) {
+    if (categoryTabs.length > 0) {
     categoryTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const selectedCat = tab.getAttribute('data-category');
         if (selectedCat === currentCategory) return;
         switchCategory(selectedCat);
+      });
+    });
+  }
 
   // Initialize category based on URL parameters or hash
   const urlParams = new URLSearchParams(window.location.search);
@@ -301,9 +304,7 @@
     });
   }
 
-      });
-    });
-  }
+
 
   // Ongoing Placeholder Enquire Button
   if (ongoingEnquireBtn) {
@@ -314,9 +315,36 @@
 
   // Card Enquire Buttons in Grid
   qsa('.project-card__enquire-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
       const projName = this.getAttribute('data-project-name');
       openEnquiryModal('enquiry', projName);
     });
+  });
+
+  // Card Media and Title Clickable to Project Brochure
+  qsa('.project-card').forEach(card => {
+    const exploreBtn = card.querySelector('.project-card__explore-btn');
+    if (exploreBtn) {
+      const href = exploreBtn.getAttribute('href');
+      const media = card.querySelector('.project-card__media');
+      const name = card.querySelector('.project-card__name');
+      if (media && href) {
+        media.style.cursor = 'pointer';
+        media.addEventListener('click', (e) => {
+          if (!e.target.closest('button') && !e.target.closest('a')) {
+            window.location.href = href;
+          }
+        });
+      }
+      if (name && href) {
+        name.style.cursor = 'pointer';
+        name.addEventListener('click', (e) => {
+          if (!e.target.closest('button') && !e.target.closest('a')) {
+            window.location.href = href;
+          }
+        });
+      }
+    }
   });
 })();

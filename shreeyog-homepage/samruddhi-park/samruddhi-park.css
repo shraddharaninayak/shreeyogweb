@@ -2034,6 +2034,13 @@ html, body {
    RESPONSIVE BREAKPOINTS
    ---------------------------------------------------------- */
 @media (max-width: 1024px) {
+  body.brochure-page {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   :root {
     --sidebar-w: 0px;
   }

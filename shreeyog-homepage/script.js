@@ -172,6 +172,36 @@ reduceMotion.addEventListener('change', updateServicesBgText);
 updateServicesBgText(); // set correct position on first paint
 
 // ----------------------------------------------------------
+// AWARDS: scroll-driven background text (left → right)
+// ----------------------------------------------------------
+const awardsBgText    = qs('.awards__bg-text');
+const awardsSectionEl = qs('.awards');
+
+function updateAwardsBgText() {
+  if (!awardsBgText || !awardsSectionEl) return;
+
+  if (reduceMotion.matches) {
+    awardsBgText.style.transform = '';
+    return;
+  }
+
+  const rect = awardsSectionEl.getBoundingClientRect();
+  const wh   = window.innerHeight;
+
+  const raw   = (wh - rect.top) / (wh * 0.75);
+  const t     = Math.max(0, Math.min(1, raw));
+  const eased = 1 - Math.pow(1 - t, 3);
+
+  const x = (eased - 1) * 80 * (window.innerWidth / 100);
+  awardsBgText.style.transform = `translateX(${x}px)`;
+}
+
+window.addEventListener('scroll', updateAwardsBgText, { passive: true });
+window.addEventListener('resize', updateAwardsBgText, { passive: true });
+reduceMotion.addEventListener('change', updateAwardsBgText);
+updateAwardsBgText();
+
+// ----------------------------------------------------------
 // MOBILE MENU OVERLAY
 // ----------------------------------------------------------
 const menuOpenBtn  = qs('#menuOpen');

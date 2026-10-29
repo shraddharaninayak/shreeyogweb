@@ -1,595 +1,610 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Portfolio — Completed &amp; Ongoing Projects | Shreeyog Builders</title>
-  <meta name="description" content="Explore residential developments by Shreeyog Builders and Land Developers in Nashik. Discover completed landmarks built on trust and upcoming communities." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="projects-page">
-
-  <!-- ======================================================
-       NAVIGATION
-  ====================================================== -->
-  <nav class="nav scrolled" id="mainNav">
-    <div class="nav__left">
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__logo" aria-label="Shreeyog Builders — Home">
-        <img
-          src="images/shreeyog-logo.png"
-          alt="Shreeyog Builders"
-          class="nav__logo-img"
-          width="135"
-        />
-      </a>
-    </div>
-
-    <div class="nav__center">
-      <ul class="nav__desktop-menu">
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__desktop-link">Home</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="nav__desktop-link">About Us</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="nav__desktop-link nav__desktop-link--active">Projects</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="nav__desktop-link">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <div class="nav__right">
-      <button type="button" class="nav__btn-enquire" id="navEnquireBtn">
-        Enquire Now
-      </button>
-      <button class="nav__menu-btn" id="menuOpen" aria-label="Open menu">
-        <span class="nav__menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <span class="nav__menu-label">MENU</span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ======================================================
-       MAIN CONTENT
-  ====================================================== -->
-  <main class="projects-page__main">
-
-    <!-- ======================================================
-         PORTFOLIO HERO & CATEGORY SWITCHER
-    ====================================================== -->
-    <section class="projects" id="portfolio">
-      <div class="projects__bg-text" aria-hidden="true">PORTFOLIO</div>
-
-      <div class="projects__header">
-        <p class="section-label">OUR PORTFOLIO</p>
-        <h1 class="projects__heading">
-          Spaces Built on Trust.<br />
-          <em>Landmarks Built to Last.</em>
-        </h1>
-        <p class="projects__subtext">
-          Explore the residential developments by Shreeyog Builders and Land Developers, bringing thoughtful planning and quality construction together.
-        </p>
-
-        <!-- Category Buttons: Completed Projects & Ongoing Projects -->
-        <div class="projects__tabs" role="tablist" aria-label="Project categories">
-          <button
-            type="button"
-            class="projects__tab projects__tab--active"
-            id="tabCompletedProjects"
-            role="tab"
-            aria-selected="true"
-            data-category="completed"
-          >
-            Completed Projects
-          </button>
-          <button
-            type="button"
-            class="projects__tab"
-            id="tabOngoingProjects"
-            role="tab"
-            aria-selected="false"
-            data-category="ongoing"
-          >
-            Ongoing Projects
-          </button>
-        </div>
-      </div>
-
-      <div class="projects__content-wrap" id="projectsContentWrap">
-        <!-- ======================================================
-             COMPLETED DEVELOPMENTS CATALOG (ALL 9 PROJECTS)
-        ====================================================== -->
-        <div class="projects-catalog" id="projectsCatalog">
-          <div class="projects-grid">
-            <!-- 1. ShreeVishwa -->
-            <article class="project-card" data-project-id="shree-vishwa">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-vishwa.jpg"
-                  alt="ShreeVishwa residential landmark by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">01 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeVishwa</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeVishwa">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 2. ShreeSamruddhi Park -->
-            <article class="project-card" data-project-id="shree-samruddhi-park">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-samruddhi-park.jpg"
-                  alt="ShreeSamruddhi Park residential landmark by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">02 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeSamruddhi Park</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeSamruddhi Park">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 3. ShreeNeelkanth -->
-            <article class="project-card" data-project-id="shree-neelkanth">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-neelkanth.jpg"
-                  alt="ShreeNeelkanth residential landmark by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">03 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeNeelkanth</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNeelkanth">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 4. ShreePadma -->
-            <article class="project-card" data-project-id="shree-padma">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-padma.jpg"
-                  alt="ShreePadma residential landmark by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">04 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreePadma</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreePadma">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 5. ShreeAnant -->
-            <article class="project-card" data-project-id="shree-anant">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-anant.svg"
-                  alt="ShreeAnant residential development by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">05 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeAnant</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeAnant">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 6. ShreeNiwas -->
-            <article class="project-card" data-project-id="shree-niwas">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-niwas.svg"
-                  alt="ShreeNiwas residential development by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">06 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeNiwas</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNiwas">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 7. ShreeNath Enclave -->
-            <article class="project-card" data-project-id="shree-nath-enclave">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-nath-enclave.svg"
-                  alt="ShreeNath Enclave residential development by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">07 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeNath Enclave</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNath Enclave">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 8. ShreeNavshakti -->
-            <article class="project-card" data-project-id="shree-navshakti">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-navshakti.svg"
-                  alt="ShreeNavshakti residential development by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">08 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeNavshakti</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNavshakti">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- 9. ShreeSwarup -->
-            <article class="project-card" data-project-id="shree-swarup">
-              <div class="project-card__media">
-                <span class="project-card__badge">COMPLETED</span>
-                <img
-                  src="images/projects/shree-swarup.jpg"
-                  alt="ShreeSwarup residential landmark by Shreeyog Builders"
-                  class="project-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__meta">
-                  <span class="project-card__num">09 / 09</span>
-                </div>
-                <h3 class="project-card__name">ShreeSwarup</h3>
-                <p class="project-card__location">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Nashik, Maharashtra
-                </p>
-                <div class="project-card__footer">
-                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeSwarup">
-                    <span>Enquire Now</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- ======================================================
-             ONGOING DEVELOPMENTS (MINIMAL PLACEHOLDER)
-        ====================================================== -->
-        <div class="projects__placeholder" id="projectsPlaceholder" style="display: none;">
-          <div class="projects__placeholder-card">
-            <div class="projects__placeholder-icon" aria-hidden="true">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18"/>
-                <path d="M5 21V7l8-4v18"/>
-                <path d="M19 21V11l-6-4"/>
-                <path d="M9 9h1"/>
-                <path d="M9 13h1"/>
-                <path d="M9 17h1"/>
-              </svg>
-            </div>
-            <span class="projects__placeholder-badge">ONGOING DEVELOPMENTS</span>
-            <h3 class="projects__placeholder-title">New Developments Coming Soon</h3>
-            <p class="projects__placeholder-desc">
-              We're preparing more details about our ongoing developments. Please check back soon for updates.
-            </p>
-            <button type="button" class="projects__placeholder-btn" id="ongoingEnquireBtn">
-              <span>Enquire for Upcoming Launches</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ======================================================
-       FOOTER
-  ====================================================== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="footer__logo">
-          <img
-            src="images/shreeyog-logo.png"
-            alt="Shreeyog Builders"
-            class="footer__logo-img"
-            width="140"
-          />
-        </a>
-        <p class="footer__tagline">
-          Creating thoughtfully designed spaces with quality, craftsmanship, and trust since 1992.
-        </p>
-        <div class="footer__social">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Visit Shreeyog Builders on Facebook"
-          >
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
-          <a
-            href="https://www.instagram.com/shreeyogbuilderslanddevelopers"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Visit Shreeyog Builders on Instagram"
-          >
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-          </a>
-          <a
-            href="https://www.youtube.com/@Shreeyogbuilders"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer__social-link"
-            aria-label="Visit Shreeyog Builders on YouTube"
-          >
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#home">Home</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html">About Us</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html">Projects</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#services">Services</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact">Contact Us</a>
-      </nav>
-      <p class="footer__copy">&copy; 2026 Shreeyog Builders Pvt. Ltd. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- ======================================================
-       MOBILE MENU OVERLAY
-  ====================================================== -->
-  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-    <div class="menu-overlay__header">
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__logo" aria-label="Shreeyog Builders — Home">
-        <img src="images/shreeyog-logo.png" alt="Shreeyog Builders" width="125" />
-      </a>
-      <button class="menu-overlay__close" id="menuClose" aria-label="Close menu">
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <nav class="menu-overlay__nav" aria-label="Mobile navigation">
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__link">Home</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="menu-overlay__link">About Us</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="menu-overlay__link" style="color: var(--color-tobacco); font-weight: 500;">Projects</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="menu-overlay__link">Contact Us</a>
-    </nav>
-
-    <div class="menu-overlay__actions">
-      <button type="button" class="menu-overlay__enquire-btn" id="mobileEnquireBtn">
-        Enquire Now
-      </button>
-      <a href="tel:+19194225141" class="menu-overlay__footer-contact">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        919-422-5141
-      </a>
-    </div>
-  </div>
-
-  <!-- ======================================================
-       ENQUIRY & BOOKING MODAL
-  ====================================================== -->
-  <div class="enquiry-modal" id="enquiryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
-    <div class="enquiry-modal__backdrop" id="modalBackdrop"></div>
-    <div class="enquiry-modal__dialog">
-      <button type="button" class="enquiry-modal__close" id="modalClose" aria-label="Close dialog">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-
-      <div class="enquiry-modal__header">
-        <span class="enquiry-modal__brand-badge">SHREEYOG BUILDERS</span>
-        <h3 class="enquiry-modal__title" id="modalHeading">Schedule Your Enquiry</h3>
-        <p class="enquiry-modal__subtitle">Connect directly with our dedicated property advisory team in Nashik.</p>
-        
-        <div class="enquiry-modal__tabs" role="tablist">
-          <button type="button" class="enquiry-modal__tab enquiry-modal__tab--active" id="tabEnquiry" role="tab" aria-selected="true">
-            General Enquiry
-          </button>
-          <button type="button" class="enquiry-modal__tab" id="tabSiteVisit" role="tab" aria-selected="false">
-            Book a Site Visit
-          </button>
-        </div>
-      </div>
-
-      <form class="enquiry-modal__form" id="enquiryForm" novalidate>
-        <input type="hidden" name="enquiry_type" id="enquiryTypeInput" value="General Enquiry" />
-        
-        <div class="form-row">
-          <div class="form-group">
-            <label for="leadName">Full Name <span class="required">*</span></label>
-            <input type="text" id="leadName" name="name" placeholder="Enter your full name" required />
-            <span class="form-error" id="nameError"></span>
-          </div>
-          <div class="form-group">
-            <label for="leadPhone">Phone Number <span class="required">*</span></label>
-            <input type="tel" id="leadPhone" name="phone" placeholder="+91 98765 43210" required />
-            <span class="form-error" id="phoneError"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="leadEmail">Email Address</label>
-            <input type="email" id="leadEmail" name="email" placeholder="name@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="leadProject">Project of Interest</label>
-            <select id="leadProject" name="project">
-              <option value="ShreeVishwa">ShreeVishwa (Delivered)</option>
-              <option value="ShreeSamruddhi Park">ShreeSamruddhi Park (Delivered)</option>
-              <option value="ShreeNeelkanth">ShreeNeelkanth (Delivered)</option>
-              <option value="ShreePadma">ShreePadma (Delivered)</option>
-              <option value="ShreeAnant">ShreeAnant (Delivered)</option>
-              <option value="ShreeNiwas">ShreeNiwas (Delivered)</option>
-              <option value="ShreeNath Enclave">ShreeNath Enclave (Delivered)</option>
-              <option value="ShreeNavshakti">ShreeNavshakti (Delivered)</option>
-              <option value="ShreeSwarup">ShreeSwarup (Delivered)</option>
-              <option value="Ongoing Developments">Upcoming &amp; Ongoing Developments</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group" id="visitDateGroup" style="display: none;">
-          <label for="leadVisitDate">Preferred Date &amp; Time <span class="required">*</span></label>
-          <input type="datetime-local" id="leadVisitDate" name="visit_date" />
-          <span class="form-error" id="dateError"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="leadMessage">Message / Specific Requirements</label>
-          <textarea id="leadMessage" name="message" rows="3" placeholder="Tell us what you are looking for (e.g. 2 BHK or 3 BHK, budget, preferred visit slot)..."></textarea>
-        </div>
-
-        <div class="enquiry-modal__actions">
-          <button type="submit" class="enquiry-modal__submit-btn" id="submitEnquiryBtn">
-            <span>Submit Request</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-
-        <div class="enquiry-modal__success" id="enquirySuccess" style="display: none;">
-          <div class="enquiry-modal__success-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h4>Thank You for Reaching Out</h4>
-          <p>Your request has been successfully recorded. Our property consultant will contact you promptly.</p>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="projects-data.js"></script>
-  <script src="projects-page.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Portfolio — Completed &amp; Ongoing Projects | Shreeyog Builders</title>
+  <meta name="description" content="Explore residential developments by Shreeyog Builders and Land Developers in Nashik. Discover completed landmarks built on trust and upcoming communities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="projects-page">
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav__left">
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__logo" aria-label="Shreeyog Builders — Home">
+        <img
+          src="images/shreeyog-logo.png"
+          alt="Shreeyog Builders"
+          class="nav__logo-img"
+          width="135"
+        />
+      </a>
+    </div>
+
+    <div class="nav__center">
+      <ul class="nav__desktop-menu">
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__desktop-link">Home</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="nav__desktop-link">About Us</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="nav__desktop-link nav__desktop-link--active">Projects</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/gallery.html" class="nav__desktop-link">Gallery</a></li>
+        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="nav__desktop-link">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="nav__right">
+      <button type="button" class="nav__btn-enquire" id="navEnquireBtn">
+        Enquire Now
+      </button>
+      <button class="nav__menu-btn" id="menuOpen" aria-label="Open menu">
+        <span class="nav__menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="nav__menu-label">MENU</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================================================
+       MAIN CONTENT
+  ====================================================== -->
+  <main class="projects-page__main">
+
+    <!-- ======================================================
+         PORTFOLIO HERO & CATEGORY SWITCHER
+    ====================================================== -->
+    <section class="projects" id="portfolio">
+      <div class="projects__bg-text" aria-hidden="true">PORTFOLIO</div>
+
+      <div class="projects__header">
+        <p class="section-label">OUR PORTFOLIO</p>
+        <h1 class="projects__heading">
+          Spaces Built on Trust.<br />
+          <em>Landmarks Built to Last.</em>
+        </h1>
+        <p class="projects__subtext">
+          Explore the residential developments by Shreeyog Builders and Land Developers, bringing thoughtful planning and quality construction together.
+        </p>
+
+        <!-- Category Buttons: Completed Projects & Ongoing Projects -->
+        <div class="projects__tabs" role="tablist" aria-label="Project categories">
+          <button
+            type="button"
+            class="projects__tab projects__tab--active"
+            id="tabCompletedProjects"
+            role="tab"
+            aria-selected="true"
+            data-category="completed"
+          >
+            Completed Projects
+          </button>
+          <button
+            type="button"
+            class="projects__tab"
+            id="tabOngoingProjects"
+            role="tab"
+            aria-selected="false"
+            data-category="ongoing"
+          >
+            Ongoing Projects
+          </button>
+        </div>
+      </div>
+
+      <div class="projects__content-wrap" id="projectsContentWrap">
+        <!-- ======================================================
+             COMPLETED DEVELOPMENTS CATALOG (ALL 9 PROJECTS)
+        ====================================================== -->
+        <div class="projects-catalog" id="projectsCatalog">
+          <div class="projects-grid">
+            <!-- 1. ShreeVishwa -->
+            <article class="project-card" data-project-id="shree-vishwa">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-vishwa.jpg"
+                  alt="ShreeVishwa residential landmark by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Shree Vishwa Logo">
+                  <img
+                    src="images/projects/logos/shree-vishwa-logo.png"
+                    alt="Shree Vishwa"
+                    class="project-card__logo-img"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="project-card__name">ShreeVishwa</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <a href="vishwa-brochure/shree-vishwa.html" class="project-card__explore-btn" title="View interactive digital brochure for Shree Vishwa">
+                    <span>Explore Project</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeVishwa">
+                    <span>Enquire</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. ShreeSamruddhi Park -->
+            <article class="project-card" data-project-id="shree-samruddhi-park">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-samruddhi-park.jpg"
+                  alt="ShreeSamruddhi Park residential landmark by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Shree Samruddhi Park Logo">
+                  <img
+                    src="images/projects/logos/shree-samruddhi-park-logo.png"
+                    alt="Shree Samruddhi Park"
+                    class="project-card__logo-img"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="project-card__name">ShreeSamruddhi Park</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <a href="samruddhi-park/samruddhi-park.html" class="project-card__explore-btn" title="View interactive digital brochure for Shree Samruddhi Park">
+                    <span>Explore Project</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeSamruddhi Park">
+                    <span>Enquire</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. ShreeNeelkanth -->
+            <article class="project-card" data-project-id="shree-neelkanth">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-neelkanth.jpg"
+                  alt="ShreeNeelkanth residential landmark by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Shree Neelkanth Logo">
+                  <img
+                    src="images/projects/logos/shree-neelkanth-logo.png"
+                    alt="Shree Neelkanth"
+                    class="project-card__logo-img"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 class="project-card__name">ShreeNeelkanth</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <a href="neelkanth-brochure/shree-neelkanth.html" class="project-card__explore-btn" title="View interactive digital brochure for ShreeNeelkanth">
+                    <span>Explore Project</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNeelkanth">
+                    <span>Enquire</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. ShreePadma -->
+            <article class="project-card" data-project-id="shree-padma">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-padma.jpg"
+                  alt="ShreePadma residential landmark by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Reserved for project logo"></div>
+                <h3 class="project-card__name">ShreePadma</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreePadma">
+                    <span>Enquire Now</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. ShreeAnant -->
+            <article class="project-card" data-project-id="shree-anant">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-anant.svg"
+                  alt="ShreeAnant residential development by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Reserved for project logo"></div>
+                <h3 class="project-card__name">ShreeAnant</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeAnant">
+                    <span>Enquire Now</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. ShreeNiwas -->
+            <article class="project-card" data-project-id="shree-niwas">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-niwas.svg"
+                  alt="ShreeNiwas residential development by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Reserved for project logo"></div>
+                <h3 class="project-card__name">ShreeNiwas</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNiwas">
+                    <span>Enquire Now</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7. ShreeNath Enclave -->
+            <article class="project-card" data-project-id="shree-nath-enclave">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-nath-enclave.svg"
+                  alt="ShreeNath Enclave residential development by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Reserved for project logo"></div>
+                <h3 class="project-card__name">ShreeNath Enclave</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNath Enclave">
+                    <span>Enquire Now</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8. ShreeNavshakti -->
+            <article class="project-card" data-project-id="shree-navshakti">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-navshakti.svg"
+                  alt="ShreeNavshakti residential development by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Reserved for project logo"></div>
+                <h3 class="project-card__name">ShreeNavshakti</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeNavshakti">
+                    <span>Enquire Now</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- 9. ShreeSwarup -->
+            <article class="project-card" data-project-id="shree-swarup">
+              <div class="project-card__media">
+                <span class="project-card__badge">COMPLETED</span>
+                <img
+                  src="images/projects/shree-swarup.jpg"
+                  alt="ShreeSwarup residential landmark by Shreeyog Builders"
+                  class="project-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__content">
+                <div class="project-card__logo-slot" aria-label="Reserved for project logo"></div>
+                <h3 class="project-card__name">ShreeSwarup</h3>
+                <p class="project-card__location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Nashik, Maharashtra
+                </p>
+                <div class="project-card__footer">
+                  <button type="button" class="project-card__enquire-btn" data-project-name="ShreeSwarup">
+                    <span>Enquire Now</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ======================================================
+             ONGOING DEVELOPMENTS (MINIMAL PLACEHOLDER)
+        ====================================================== -->
+        <div class="projects__placeholder" id="projectsPlaceholder" style="display: none;">
+          <div class="projects__placeholder-card">
+            <div class="projects__placeholder-icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l8-4v18"/>
+                <path d="M19 21V11l-6-4"/>
+                <path d="M9 9h1"/>
+                <path d="M9 13h1"/>
+                <path d="M9 17h1"/>
+              </svg>
+            </div>
+            <span class="projects__placeholder-badge">ONGOING DEVELOPMENTS</span>
+            <h3 class="projects__placeholder-title">New Developments Coming Soon</h3>
+            <p class="projects__placeholder-desc">
+              We're preparing more details about our ongoing developments. Please check back soon for updates.
+            </p>
+            <button type="button" class="projects__placeholder-btn" id="ongoingEnquireBtn">
+              <span>Enquire for Upcoming Launches</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="footer__logo">
+          <img
+            src="images/shreeyog-logo.png"
+            alt="Shreeyog Builders"
+            class="footer__logo-img"
+            width="140"
+          />
+        </a>
+        <p class="footer__tagline">
+          Creating thoughtfully designed spaces with quality, craftsmanship, and trust since 1992.
+        </p>
+        <div class="footer__social">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label="Visit Shreeyog Builders on Facebook"
+          >
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/shreeyogbuilderslanddevelopers"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label="Visit Shreeyog Builders on Instagram"
+          >
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a
+            href="https://www.youtube.com/@Shreeyogbuilders"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label="Visit Shreeyog Builders on YouTube"
+          >
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/#home">Home</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html">About Us</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html">Projects</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/gallery.html">Gallery</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/#services">Services</a>
+        <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact">Contact Us</a>
+      </nav>
+      <p class="footer__copy">&copy; 2026 Shreeyog Builders Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======================================================
+       MOBILE MENU OVERLAY
+  ====================================================== -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-overlay__header">
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__logo" aria-label="Shreeyog Builders — Home">
+        <img src="images/shreeyog-logo.png" alt="Shreeyog Builders" width="125" />
+      </a>
+      <button class="menu-overlay__close" id="menuClose" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="menu-overlay__nav" aria-label="Mobile navigation">
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__link">Home</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="menu-overlay__link">About Us</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="menu-overlay__link" style="color: var(--color-tobacco); font-weight: 500;">Projects</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/gallery.html" class="menu-overlay__link">Gallery</a>
+      <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="menu-overlay__link">Contact Us</a>
+    </nav>
+
+    <div class="menu-overlay__actions">
+      <button type="button" class="menu-overlay__enquire-btn" id="mobileEnquireBtn">
+        Enquire Now
+      </button>
+      <a href="tel:+19194225141" class="menu-overlay__footer-contact">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        919-422-5141
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       ENQUIRY & BOOKING MODAL
+  ====================================================== -->
+  <div class="enquiry-modal" id="enquiryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="enquiry-modal__backdrop" id="modalBackdrop"></div>
+    <div class="enquiry-modal__dialog">
+      <button type="button" class="enquiry-modal__close" id="modalClose" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="enquiry-modal__header">
+        <span class="enquiry-modal__brand-badge">SHREEYOG BUILDERS</span>
+        <h3 class="enquiry-modal__title" id="modalHeading">Schedule Your Enquiry</h3>
+        <p class="enquiry-modal__subtitle">Connect directly with our dedicated property advisory team in Nashik.</p>
+        
+        <div class="enquiry-modal__tabs" role="tablist">
+          <button type="button" class="enquiry-modal__tab enquiry-modal__tab--active" id="tabEnquiry" role="tab" aria-selected="true">
+            General Enquiry
+          </button>
+          <button type="button" class="enquiry-modal__tab" id="tabSiteVisit" role="tab" aria-selected="false">
+            Book a Site Visit
+          </button>
+        </div>
+      </div>
+
+      <form class="enquiry-modal__form" id="enquiryForm" novalidate>
+        <input type="hidden" name="enquiry_type" id="enquiryTypeInput" value="General Enquiry" />
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="leadName">Full Name <span class="required">*</span></label>
+            <input type="text" id="leadName" name="name" placeholder="Enter your full name" required />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="leadPhone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="leadPhone" name="phone" placeholder="+91 98765 43210" required />
+            <span class="form-error" id="phoneError"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="leadEmail">Email Address</label>
+            <input type="email" id="leadEmail" name="email" placeholder="name@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="leadProject">Project of Interest</label>
+            <select id="leadProject" name="project">
+              <option value="ShreeVishwa">ShreeVishwa (Delivered)</option>
+              <option value="ShreeSamruddhi Park">ShreeSamruddhi Park (Delivered)</option>
+              <option value="ShreeNeelkanth">ShreeNeelkanth (Delivered)</option>
+              <option value="ShreePadma">ShreePadma (Delivered)</option>
+              <option value="ShreeAnant">ShreeAnant (Delivered)</option>
+              <option value="ShreeNiwas">ShreeNiwas (Delivered)</option>
+              <option value="ShreeNath Enclave">ShreeNath Enclave (Delivered)</option>
+              <option value="ShreeNavshakti">ShreeNavshakti (Delivered)</option>
+              <option value="ShreeSwarup">ShreeSwarup (Delivered)</option>
+              <option value="Ongoing Developments">Upcoming &amp; Ongoing Developments</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" id="visitDateGroup" style="display: none;">
+          <label for="leadVisitDate">Preferred Date &amp; Time <span class="required">*</span></label>
+          <input type="datetime-local" id="leadVisitDate" name="visit_date" />
+          <span class="form-error" id="dateError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="leadMessage">Message / Specific Requirements</label>
+          <textarea id="leadMessage" name="message" rows="3" placeholder="Tell us what you are looking for (e.g. 2 BHK or 3 BHK, budget, preferred visit slot)..."></textarea>
+        </div>
+
+        <div class="enquiry-modal__actions">
+          <button type="submit" class="enquiry-modal__submit-btn" id="submitEnquiryBtn">
+            <span>Submit Request</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <div class="enquiry-modal__success" id="enquirySuccess" style="display: none;">
+          <div class="enquiry-modal__success-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h4>Thank You for Reaching Out</h4>
+          <p>Your request has been successfully recorded. Our property consultant will contact you promptly.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="projects-data.js"></script>
+  <script src="projects-page.js"></script>
+</body>
+</html>
+

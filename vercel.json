@@ -1,22 +1,82 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/shreeyog-homepage/index.html" },
-    { "source": "/about", "destination": "/shreeyog-homepage/about.html" },
-    { "source": "/about/", "destination": "/shreeyog-homepage/about.html" },
-    { "source": "/projects", "destination": "/shreeyog-homepage/projects.html" },
-    { "source": "/projects/", "destination": "/shreeyog-homepage/projects.html" },
-    { "source": "/projects/completed", "destination": "/shreeyog-homepage/projects.html?tab=completed" },
-    { "source": "/projects/completed/", "destination": "/shreeyog-homepage/projects.html?tab=completed" },
-    { "source": "/projects/ongoing", "destination": "/shreeyog-homepage/projects.html?tab=ongoing" },
-    { "source": "/projects/ongoing/", "destination": "/shreeyog-homepage/projects.html?tab=ongoing" },
-    { "source": "/gallery", "destination": "/shreeyog-homepage/gallery.html" },
-    { "source": "/gallery/", "destination": "/shreeyog-homepage/gallery.html" },
-    { "source": "/neelkanth-brochure/(.*)", "destination": "/shreeyog-homepage/neelkanth-brochure/$1" },
-    { "source": "/samruddhi-park/(.*)", "destination": "/shreeyog-homepage/samruddhi-park/$1" },
-    { "source": "/vishwa-brochure/(.*)", "destination": "/shreeyog-homepage/vishwa-brochure/$1" },
-    { "source": "/images/(.*)", "destination": "/shreeyog-homepage/images/$1" },
-    { "source": "/(.*)", "destination": "/shreeyog-homepage/$1" }
+    {
+      "source": "/",
+      "destination": "/shreeyog-homepage/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/shreeyog-homepage/about.html"
+    },
+    {
+      "source": "/about/",
+      "destination": "/shreeyog-homepage/about.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/shreeyog-homepage/projects.html"
+    },
+    {
+      "source": "/projects/",
+      "destination": "/shreeyog-homepage/projects.html"
+    },
+    {
+      "source": "/projects/completed",
+      "destination": "/shreeyog-homepage/projects.html?tab=completed"
+    },
+    {
+      "source": "/projects/completed/",
+      "destination": "/shreeyog-homepage/projects.html?tab=completed"
+    },
+    {
+      "source": "/projects/ongoing",
+      "destination": "/shreeyog-homepage/projects.html?tab=ongoing"
+    },
+    {
+      "source": "/projects/ongoing/",
+      "destination": "/shreeyog-homepage/projects.html?tab=ongoing"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/shreeyog-homepage/gallery.html"
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/shreeyog-homepage/gallery.html"
+    },
+    {
+      "source": "/neelkanth-brochure/(.*)",
+      "destination": "/shreeyog-homepage/neelkanth-brochure/$1"
+    },
+    {
+      "source": "/samruddhi-park/(.*)",
+      "destination": "/shreeyog-homepage/samruddhi-park/$1"
+    },
+    {
+      "source": "/vishwa-brochure/(.*)",
+      "destination": "/shreeyog-homepage/vishwa-brochure/$1"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "/shreeyog-homepage/images/$1"
+    },
+    {
+      "source": "/about/(.*)",
+      "destination": "/shreeyog-homepage/$1"
+    },
+    {
+      "source": "/projects/(.*)",
+      "destination": "/shreeyog-homepage/$1"
+    },
+    {
+      "source": "/gallery/(.*)",
+      "destination": "/shreeyog-homepage/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/shreeyog-homepage/$1"
+    }
   ]
 }

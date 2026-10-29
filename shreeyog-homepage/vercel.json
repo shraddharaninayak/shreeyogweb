@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/about/", "destination": "/about.html" },
+    { "source": "/projects", "destination": "/projects.html" },
+    { "source": "/projects/", "destination": "/projects.html" },
+    { "source": "/projects/completed", "destination": "/projects.html?tab=completed" },
+    { "source": "/projects/completed/", "destination": "/projects.html?tab=completed" },
+    { "source": "/projects/ongoing", "destination": "/projects.html?tab=ongoing" },
+    { "source": "/projects/ongoing/", "destination": "/projects.html?tab=ongoing" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/gallery/", "destination": "/gallery.html" },
+    { "source": "/neelkanth", "destination": "/neelkanth-brochure/shree-neelkanth.html" },
+    { "source": "/neelkanth/", "destination": "/neelkanth-brochure/shree-neelkanth.html" },
+    { "source": "/samruddhi-park", "destination": "/samruddhi-park/samruddhi-park.html" },
+    { "source": "/samruddhi-park/", "destination": "/samruddhi-park/samruddhi-park.html" },
+    { "source": "/vishwa", "destination": "/vishwa-brochure/shree-vishwa.html" },
+    { "source": "/vishwa/", "destination": "/vishwa-brochure/shree-vishwa.html" }
+  ]
+}

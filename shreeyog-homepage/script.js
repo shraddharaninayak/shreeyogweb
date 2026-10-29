@@ -839,3 +839,11 @@ qsa('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Navbar Search / Enquiry Action
+const navSearchBtn = qs('#navSearchBtn');
+if (navSearchBtn) {
+  navSearchBtn.addEventListener('click', () => {
+    openEnquiryModal('enquiry');
+  });
+}

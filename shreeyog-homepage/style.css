@@ -222,7 +222,8 @@ button {
 .nav__left {
   display: flex;
   align-items: center;
-  flex: 0 0 auto;
+  flex: 1 1 0;
+  justify-content: flex-start;
 }
 
 .nav__logo {
@@ -375,7 +376,7 @@ button {
   align-items: center;
   justify-content: flex-end;
   gap: 1.25rem;
-  flex: 0 0 auto;
+  flex: 1 1 0;
 }
 
 /* Prominent Enquire Now Button in Navbar */
@@ -424,12 +425,23 @@ button {
 
 /* Mobile Menu Button */
 .nav__menu-btn {
-  display: none;
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   color: var(--color-vanilla);
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  background: transparent;
+  border: none;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+.nav__menu-btn:hover {
+  color: var(--color-tobacco);
 }
 
 .nav__menu-icon {
@@ -2166,7 +2178,7 @@ input::placeholder, textarea::placeholder {
     letter-spacing: 0.12em;
   }
   .nav__menu-label {
-    display: none;
+    display: inline-block;
   }
   .nav__menu-btn {
     padding: 0.4rem 0.2rem;

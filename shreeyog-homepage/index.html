@@ -16,7 +16,18 @@
   ====================================================== -->
   <nav class="nav" id="mainNav">
     <div class="nav__left">
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__logo" aria-label="Shreeyog Builders — Home">
+      <button class="nav__menu-btn" id="menuOpen" aria-label="Open menu">
+        <span class="nav__menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="nav__menu-label">MENU</span>
+      </button>
+    </div>
+
+    <div class="nav__center">
+      <a href="index.html#home" class="nav__logo" aria-label="Shreeyog Builders — Home">
         <img
           src="images/shreeyog-logo.png"
           alt="Shreeyog Builders"
@@ -26,27 +37,13 @@
       </a>
     </div>
 
-    <div class="nav__center">
-      <ul class="nav__desktop-menu">
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="nav__desktop-link nav__desktop-link--active">Home</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="nav__desktop-link">About Us</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="nav__desktop-link">Projects</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/gallery.html" class="nav__desktop-link">Gallery</a></li>
-        <li><a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="nav__desktop-link">Contact Us</a></li>
-      </ul>
-    </div>
-
     <div class="nav__right">
-      <button type="button" class="nav__btn-enquire" id="navEnquireBtn">
-        Enquire Now
-      </button>
-      <button class="nav__menu-btn" id="menuOpen" aria-label="Open menu">
-        <span class="nav__menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <span class="nav__menu-label">MENU</span>
+      <a href="tel:+919823534751" class="nav__contact" aria-label="Call +91 98235 34751">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+91 98235 34751</span>
+      </a>
+      <button type="button" class="nav__search" id="navSearchBtn" aria-label="Enquire & Search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
     </div>
   </nav>
@@ -89,7 +86,7 @@
       </p>
 
       <div class="hero__cta-group">
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="hero__btn hero__btn--primary">
+        <a href="projects.html" class="hero__btn hero__btn--primary">
           <span>Explore Projects</span>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -398,13 +395,14 @@
         </div>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#home">Home</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html">About Us</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html">Projects</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/gallery.html">Gallery</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#services">Services</a>
-        <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact">Contact Us</a>
-      </nav>
+          <a href="index.html#home">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html?tab=ongoing">Ongoing Projects</a>
+          <a href="projects.html?tab=completed">Completed Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
       <p class="footer__copy">&copy; 2026 Shreeyog Builders Pvt. Ltd. All rights reserved.</p>
     </div>
   </footer>
@@ -414,7 +412,7 @@
   ====================================================== -->
   <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
     <div class="menu-overlay__header">
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__logo" aria-label="Shreeyog Builders — Home">
+      <a href="index.html#home" class="menu-overlay__logo" aria-label="Shreeyog Builders — Home">
         <img src="images/shreeyog-logo.png" alt="Shreeyog Builders" width="125" />
       </a>
       <button class="menu-overlay__close" id="menuClose" aria-label="Close menu">
@@ -423,21 +421,23 @@
       </button>
     </div>
 
-    <nav class="menu-overlay__nav" aria-label="Mobile navigation">
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#home" class="menu-overlay__link">Home</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/about.html" class="menu-overlay__link">About Us</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/projects.html" class="menu-overlay__link">Projects</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/gallery.html" class="menu-overlay__link">Gallery</a>
-      <a href="http://127.0.0.1:5500/shreeyog-homepage/#contact" class="menu-overlay__link">Contact Us</a>
+    <nav class="menu-overlay__nav" aria-label="Website navigation">
+      <a href="index.html#home" class="menu-overlay__link">Home</a>
+      <a href="about.html" class="menu-overlay__link">About</a>
+      <a href="projects.html?tab=ongoing" class="menu-overlay__link">Ongoing Projects</a>
+      <a href="projects.html?tab=completed" class="menu-overlay__link">Completed Projects</a>
+      <a href="gallery.html" class="menu-overlay__link">Gallery</a>
+      <a href="index.html#services" class="menu-overlay__link">Services</a>
+      <a href="index.html#contact" class="menu-overlay__link">Contact</a>
     </nav>
 
     <div class="menu-overlay__actions">
       <button type="button" class="menu-overlay__enquire-btn" id="mobileEnquireBtn">
         Enquire Now
       </button>
-      <a href="tel:+19194225141" class="menu-overlay__footer-contact">
+      <a href="tel:+919823534751" class="menu-overlay__footer-contact">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.82-.82a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        919-422-5141
+        +91 98235 34751
       </a>
     </div>
   </div>

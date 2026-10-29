@@ -283,6 +283,24 @@
         const selectedCat = tab.getAttribute('data-category');
         if (selectedCat === currentCategory) return;
         switchCategory(selectedCat);
+
+  // Initialize category based on URL parameters or hash
+  const urlParams = new URLSearchParams(window.location.search);
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  if (urlParams.get('tab') === 'ongoing' || urlParams.get('filter') === 'ongoing' || hash === '#ongoing' || path.includes('/ongoing')) {
+    switchCategory('ongoing');
+  } else {
+    switchCategory('completed');
+  }
+
+  const navSearchBtn = qs('#navSearchBtn');
+  if (navSearchBtn) {
+    navSearchBtn.addEventListener('click', () => {
+      openEnquiryModal('enquiry');
+    });
+  }
+
       });
     });
   }

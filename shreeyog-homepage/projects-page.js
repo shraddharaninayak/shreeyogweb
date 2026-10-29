@@ -238,12 +238,14 @@
   // ----------------------------------------------------------
   // CATEGORY SWITCHER (Completed Projects vs Ongoing Projects)
   // ----------------------------------------------------------
-  const projectsCatalog     = qs('#projectsCatalog');
-  const projectsPlaceholder = qs('#projectsPlaceholder');
-  const ongoingEnquireBtn   = qs('#ongoingEnquireBtn');
-  const categoryTabs        = qsa('.projects__tab');
+  const highlightedProjectsCatalog = qs('#highlightedProjectsCatalog');
+  const projectsCatalog            = qs('#projectsCatalog');
+  const ongoingProjectsCatalog     = qs('#ongoingProjectsCatalog');
+  const projectsPlaceholder        = qs('#projectsPlaceholder');
+  const ongoingEnquireBtn          = qs('#ongoingEnquireBtn');
+  const categoryTabs               = qsa('.projects__tab');
 
-  let currentCategory = 'completed'; // Default: completed
+  let currentCategory = 'highlighted'; // Default: highlighted
 
   function switchCategory(category) {
     currentCategory = category;
@@ -254,27 +256,27 @@
       t.setAttribute('aria-selected', String(isActive));
     });
 
-    if (category === 'completed') {
-      if (projectsPlaceholder) projectsPlaceholder.style.display = 'none';
-      if (projectsCatalog) {
-        projectsCatalog.style.display = 'block';
-        projectsCatalog.style.opacity = '0';
+    const catalogMap = {
+      'highlighted': highlightedProjectsCatalog,
+      'completed': projectsCatalog,
+      'ongoing': ongoingProjectsCatalog
+    };
+
+    if (projectsPlaceholder) projectsPlaceholder.style.display = 'none';
+
+    Object.entries(catalogMap).forEach(([catKey, el]) => {
+      if (!el) return;
+      if (catKey === category) {
+        el.style.display = 'block';
+        el.style.opacity = '0';
         requestAnimationFrame(() => {
-          projectsCatalog.style.transition = 'opacity 0.35s ease';
-          projectsCatalog.style.opacity = '1';
+          el.style.transition = 'opacity 0.35s ease';
+          el.style.opacity = '1';
         });
+      } else {
+        el.style.display = 'none';
       }
-    } else {
-      if (projectsCatalog) projectsCatalog.style.display = 'none';
-      if (projectsPlaceholder) {
-        projectsPlaceholder.style.display = 'flex';
-        projectsPlaceholder.style.opacity = '0';
-        requestAnimationFrame(() => {
-          projectsPlaceholder.style.transition = 'opacity 0.35s ease';
-          projectsPlaceholder.style.opacity = '1';
-        });
-      }
-    }
+    });
   }
 
     if (categoryTabs.length > 0) {
@@ -293,8 +295,10 @@
   const path = window.location.pathname.toLowerCase();
   if (urlParams.get('tab') === 'ongoing' || urlParams.get('filter') === 'ongoing' || hash === '#ongoing' || path.includes('/ongoing')) {
     switchCategory('ongoing');
-  } else {
+  } else if (urlParams.get('tab') === 'completed' || urlParams.get('filter') === 'completed' || hash === '#completed' || path.includes('/completed')) {
     switchCategory('completed');
+  } else {
+    switchCategory('highlighted');
   }
 
   const navSearchBtn = qs('#navSearchBtn');

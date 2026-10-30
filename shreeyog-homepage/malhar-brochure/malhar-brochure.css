@@ -143,23 +143,34 @@ button {
 
 .sidebar-logo-card {
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
   max-width: 220px;
-  padding: 12px 14px;
-  background: #FFFFFF;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 4px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
+
 .sidebar-logo-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0.92;
 }
 
 .sidebar-logo-img {
   width: 100%;
+  max-width: 200px;
   height: auto;
+  max-height: 74px;
+  margin: 0 auto;
   object-fit: contain;
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 }
 
 .sidebar-location {
@@ -319,9 +330,11 @@ button {
 .mobile-bar-logo {
   height: 38px;
   width: auto;
-  background: #FFFFFF;
-  padding: 3px 6px;
-  border-radius: 4px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 .mobile-bar-title {
   font-family: var(--serif);

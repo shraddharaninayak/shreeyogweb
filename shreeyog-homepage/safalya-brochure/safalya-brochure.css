@@ -133,27 +133,34 @@ button {
 
 .sidebar-logo-card {
   display: block;
-  margin: 0 auto 0.75rem;
-  padding: 0.7rem 0.85rem;
-  background: rgba(11, 25, 18, 0.75);
-  border: 1px solid var(--sf-sage-border);
-  border-radius: 8px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), inset 0 0 12px rgba(197, 165, 114, 0.1);
-  transition: all 0.3s ease;
+  margin: 0 auto 10px;
+  max-width: 220px;
+  padding: 4px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .sidebar-logo-card:hover {
-  border-color: var(--sf-gold);
   transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(197, 165, 114, 0.3);
+  opacity: 0.92;
 }
 
 .sidebar-logo-img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 200px;
   height: auto;
-  max-height: 72px;
+  max-height: 74px;
   margin: 0 auto;
   object-fit: contain;
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 }
 
 .sidebar-location {
@@ -330,6 +337,10 @@ button {
 .mobile-bar-logo {
   height: 38px;
   width: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .mobile-bar-title {

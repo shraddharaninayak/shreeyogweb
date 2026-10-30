@@ -2528,23 +2528,31 @@ input::placeholder, textarea::placeholder {
 }
 
 .project-card__logo-slot {
-  height: 46px;
+  height: 48px;
   margin-bottom: 0.65rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Clean reserved & active space for project logo */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .project-card__logo-img {
-  max-height: 44px;
-  max-width: 165px;
+  max-height: 46px;
+  max-width: 175px;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
   transition: transform 0.25s ease;
 }
 
